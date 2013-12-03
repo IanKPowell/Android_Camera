@@ -9,7 +9,7 @@
     <keywords>captifeye,camera</keywords>
 
     <js-module src="www/camera.js" name="Cam">
-    	<clobbers target="navigator.camera" />
+    	<clobbers target="captifeye.camera" />
     </js-module>
 
      <!-- android -->
