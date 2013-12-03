@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.captifeye.camera"
+    version="0.0.1">
+    <name>Camera</name>
+    <description>Captifeye Camera Plugin</description>
+    <license>Captifeye Corp</license>
+    <keywords>captifeye,camera</keywords>
+
+    <js-module src="www/camera.js" name="Cam">
+    	<clobbers target="navigator.camera" />
+    </js-module>
+
+     <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Cam">
+                <param name="android-package" value="org.captifeye.camera.CameraLauncher"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/constant/consistanace/camera/CameraLauncher.java" target-dir="src/org/captifeye/camera" />
+
+     </platform>
+
+</plugin>
